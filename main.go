@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/hadi25nov/go-rest-api-gin/controllers/productcontroller"
+	productcontroller "github.com/hadi25nov/go-rest-api-gin/controllers"
 	"github.com/hadi25nov/go-rest-api-gin/models"
 )
 
@@ -14,7 +14,7 @@ func main() {
 	r.GET("/api/products/:id", productcontroller.Show)
 	r.POST("/api/products", productcontroller.Create)
 	r.PUT("/api/products/:id", productcontroller.Update)
-	r.DELETE("/api/products/", productcontroller.Delete)
+	r.DELETE("/api/product/", productcontroller.Delete)
 
-	r.Run()
+	r.Run(":8082")
 }
